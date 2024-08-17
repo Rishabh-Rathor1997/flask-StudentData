@@ -1,0 +1,17 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.data{
+  width: 450px !important;
+  padding: 20px 25px;
+  margin: auto;
+  background-color: rgb(210, 218, 224);
+  border-radius: 5px;
+}
+
+

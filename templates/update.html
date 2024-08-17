@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Data{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Update Student</h2>
+<div class="container data">
+    <form class="form-horizontal" method="POST" action="{{ url_for('update', id=student.id) }}">
+        <input type="hidden" name="id" value="{{ student.id }}">
+        <div class="form-group mb-3 fw-bold">
+            <label for="name" class="form-label">Name</label>
+           
+                <input type="text" class="form-control" id="name" name="name" value="{{ student.name }}">
+           
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="email" class="form-label">Email</label>
+           
+                <input type="email" class="form-control" id="email" name="email" value="{{ student.email }}">
+           
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="class"  class="form-label">Class</label>
+            
+                <input type="text" class="form-control" id="class" name="class" value="{{ student.class_ }}">
+           
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="section"  class="form-label">Section</label>
+            
+                <input type="text" class="form-control" id="section" name="section" value="{{ student.section }}">
+           
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="gender"  class="form-label">Gender</label>
+            
+                <select class="form-control" id="gender" name="gender">
+                    <option value="Male" {% if student.gender == "Male" %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if student.gender == "Female" %}selected{% endif %}>Female</option>
+                    <option value="Other" {% if student.gender == "Other" %}selected{% endif %}>Other</option>
+                </select>
+           
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="address" class="form-label">Address</label>
+            
+                <textarea class="form-control" id="address" name="address">{{ student.address }}</textarea>
+            
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label for="dob"  class="form-label">Date of Birth</label>
+           
+                <input type="date" class="form-control" id="dob" name="dob" value="{{ student.dob }}">
+          
+        </div>
+        <div class="form-group fw-bold mb-3">
+            <label maxlength="10" for="mobile_no"  class="form-label">Mobile Number</label>
+           
+                <input type="tel" class="form-control" id="mobile_no" name="mobile_no" value="{{ student.mobile_no }}">
+           
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
