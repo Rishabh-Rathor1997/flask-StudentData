@@ -4,11 +4,12 @@
 
 {% block content %}
 <div class="container">
+    <h1   class="display-4 text-center my-5 ">Student Data</h1><br>
     {% if students %}
-        <h1 class="display-4">Student Data</h1><br>
+        
         <div class="table-responsive">
             <table class="table table-light table-hover  table-bordered">
-                <thead class="thead-dark">
+                <thead class="table-dark">
                     <tr>
                         <th class="text-center" scope="col">S.No</th>
                         <th class="text-center" scope="col">Id</th>
@@ -18,7 +19,7 @@
                         <th class="text-center"  scope="col">Gender</th>
                         <th class="text-center"  scope="col">Address</th>
                         <th class="text-center"  scope="col">Dob</th>
-                        <th class="text-center"  scope="col">Mobile_No</th>
+                        <th class="text-center"  scope="col">Phone_No.</th>
                         <th  class="text-center"  scope="col">Email</th>
                         <th class="text-center"  scope="col">Created_at</th>
                         <th  class="text-center"  scope="col">Delete</th>
@@ -43,7 +44,7 @@
                             <a href="{{ url_for('delete', id=student.id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                         <td>
-                            <a href="{{ url_for('update', id=student.id) }}" class="btn btn-primary btn-sm">Update</a>
+                            <a href="{{ url_for('update', id=student.id) }}" class="btn btn-warning btn-sm">Update</a>
                         </td>
                     </tr>
                     {% endfor %}

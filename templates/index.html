@@ -26,7 +26,7 @@
                     </li>
                 </ul>
                 <form class="d-flex" method="GET" action="{{ url_for('search') }}">
-                    <input class="form-control me-2" type="search" id="Search_Student" name="query" placeholder="Search ... " aria-label="Search">
+                    <input class="form-control me-2" type="search" id="Search_Student" name="query" placeholder="Search to update ... " aria-label="Search">
                     <select class="form-select me-2" id="option" name="search_option">
                         <option value="Name">Name</option>
                         <option value="Id">Id</option>
@@ -34,7 +34,7 @@
                         <option value="Dob">DOB</option>
                         <option value="Email">Email</option>
                     </select>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -44,9 +44,11 @@
           </div>
           
           <div class="container-fluid d-flex justify-content-around align-items-center">
+
+
             {% if students %}
                 
-                
+                <div class="table-responsive" >
                     <table id="myTable" class="table table-light table-hover  table-bordered">
                         <thead class="table-dark">
                             <tr>
@@ -58,7 +60,7 @@
                                 <th  class="text-center" scope="col">Gender</th>
                                 <th  class="text-center" scope="col">Address</th>
                                 <th  class="text-center" scope="col">Dob</th>
-                                <th  class="text-center" scope="col">Mobile_No</th>
+                                <th  class="text-center" scope="col">Phone_No</th>
                                 <th  class="text-center"  scope="col">Email</th>
                                 <th  class="text-center" scope="col">Created_at</th>
                             </tr>
@@ -82,6 +84,7 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                </div>
                
             {% else %}
                 <h1 class="text-center">No student data found.</h1>
